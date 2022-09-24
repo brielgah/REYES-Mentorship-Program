@@ -1,9 +1,10 @@
-library("fda");
+# This code create and plot the basis functions in particular constant, monomial, fourier and bspline basis
+library("fda"); # Import fda package
 #----- Constant Basis ---------------------
-constantBasis = create.constant.basis(c(0,7));
-x <- seq(0,5,length.out=10)
-constBasisEval = eval.basis(x,constantBasis)
-matplot(x,constBasisEval,type='l',xlab = "t",ylab="x(t)",main="Constant basis")
+constantBasis = create.constant.basis(c(0,7)); #Create constant basis 
+x <- seq(0,5,length.out=10) #Vector with values from [0-5]
+constBasisEval = eval.basis(x,constantBasis) #Evaluating constant basis with values of x
+matplot(x,constBasisEval,type='l',xlab = "t",ylab="x(t)",main="Constant basis") #Ploting constant basis evaluated
 #----- Monomial Basis ---------------------
 monomialBasis = create.monomial.basis(c(0,3), 4)
 x <- seq(0,1,length.out=5)
